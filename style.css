@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*  RESET CSS  */
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  Tipography  */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.menu-desktop > li > a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.menu-desktop {
+  display: none;
+}
+
+.hvr-glow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+
+.hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+p{
+  color: white;
+}
+
+body > div > div > div > p > a {
+  color: #FF5757;
+  text-decoration: none;
+}
+
+/* Nav hamburger style */
+
+nav{
+    height: 10vh;
+}
+
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 13;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: white;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  /*box-shadow: inset 0 0 2000px rgba(255, 255, 255, .50); bellino, ma non si vedono bene i caratter */
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  transform: translate(-150%);
+  display: flex;
+  opacity: 1; 
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s, opacity 0.5s ease-in-out;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Non mi serve per il momento
+.logo {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 1.2rem;
+  color: #0e2431;
+}
+*/
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  position: fixed;
+  z-index: 10;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.nav-container input[type="checkbox"]:not(:checked) ~ .menu-items { 
+   opacity: 0;
+   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  background-color: black;
+  transform: rotate(45deg);
+  
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+  background-color: black;
+  
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+  background-color: black;
+  
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+
+/****************************/
+
+/*           GRID           */
+
+.wrapper {
+    height: 90vh;
+    display: grid;
+    grid-template-areas: 'hero hero'
+                         'hero hero'
+                         'hero hero'
+                         'bar bar'
+                         'main main'
+                         'main main'
+                         'main main'
+                         'main main'
+                         'foot foot';
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper-register{
+  height: 90vh;
+    display: grid;
+    grid-template-areas: 'hero hero'
+                         'hero hero'
+                         'hero hero'
+                         'hero hero'
+                         'hero hero'
+                         'hero hero'
+                         'main main'
+                         'main main'
+                         'main main'
+                         'main main';
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+.bar {
+    grid-area: bar;
+    position: relative;
+    width: 100vw;
+    min-height: .2rem;
+    margin-bottom: .2rem;
+}
+
+.bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FF5757;
+    transform: skewY(-10deg);
+    z-index: -1;
+}
+
+.main {
+    grid-area: main;
+    position: relative;
+    width: 100vw;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #173057;
+    transform: skewY(-10deg);
+    z-index: -1;
+}
+
+.main::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Altezza dell'inclinazione */
+    background-color: #173057;
+    transform: skewY(10deg);
+    transform-origin: bottom left;
+    z-index: -2;
+}
+
+
+.footer {
+    grid-area: foot;
+    background-color: #FF5757;
+    min-height: 20px;
+}
+
+/* FORM */
+
+h1 {
+    color: white;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+} 
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+input {
+    border-radius: 20px;
+    background-color: #8F8F8E;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+
+.button {
+    margin-top: 20px;
+    background-color: #FF5757;
+}
+
+label {
+    margin-left: 1rem;
+}
+
+form > p, form > a {
+    text-align: center;
+}
+
+form > a {
+    color:#FF5757;
+}
+
+
+/* Video & media Background */
+
+video {
+    position: fixed;
+    z-index: -2;
+    contain: content;
+    width: 100%;
+    height: auto;
+    object-position: 0 -20px;
+}
+
+img {
+    width: 80px;
+    height: min-content;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+/* Media query */
+
+/* Portrait orizzontale mobile */
+
+@media (min-width: 550px) {
+  .bar::before {
+    content: '';
+    transform: skewY(0);
+  }
+
+  .main::after, .main::before {
+    content: '';
+    transform: skewY(0);
+  }
+
+  .wrapper, .wrapper-register {
+   height: 70vh;
+  }
+
+  nav {
+    height: 30vh;
+  }
+
+  video {
+    object-position: 0 -100px;
+  }
+
+  .wrapper, .wrapper-register {
+    overflow: auto;
+  }
+
+  .footer {
+    min-height: 30px;
+  }
+  
+  .bar {
+    display: none;
+  }
+
+  nav {
+    height: 30vh;
+  }
+  
+}
+
+
+/* Desktop o schermi cmq superiori ai 900px */
+
+@media only screen and (min-width: 900px) {
+  .bar::before {
+    content: '';
+    transform: skewY(0);
+  }
+
+  .main::after, .main::before {
+    content: '';
+    transform: skewY(0);
+  }
+
+  .wrapper, .wrapper-register {
+   height: 70vh;
+   
+  }
+
+  
+  nav {
+    height: 30vh;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  video {
+    object-position: 0 -180px;
+  }
+
+  .bar {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    width: 100%;
+  }
+
+  .bar2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    width: 100%;
+    background-color: #FF5757;
+  }
+
+  body > nav > div > div > div.menu-items > li > a {
+    position: absolute;
+    display: inline-block;
+    top: 2rem;
+    left: 1rem;
+    z-index: 2;
+    visibility: visible;
+    height: fit-content;
+  }
+
+  .menu-desktop {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: inherit;
+  }
+
+  .menu-desktop > li {
+    list-style: none;
+  }
+
+  
+}
+
+@media only screen and (min-width: 1400px) {
+
+  video {
+    object-position: 0 -300px;
+  }
+
+}
+
+
+
