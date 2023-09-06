@@ -442,6 +442,7 @@ img {
   .main::after, .main::before {
     content: '';
     transform: skewY(0);
+    background: linear-gradient(0deg, rgba(23,48,87,1) 0%, rgb(90, 121, 170) 79%, rgba(130,155,196,0) 100%);
   }
 
   .wrapper, .wrapper-register {
